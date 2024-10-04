@@ -1,3 +1,6 @@
+.idea
+.vscode
+.wrangler
 # Logs
 logs
 *.log
