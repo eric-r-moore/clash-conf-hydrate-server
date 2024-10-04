@@ -9,8 +9,8 @@ export const onRequest: PagesFunction = async (context) => {
     } catch (e) {
         console.warn('获取远程配置失败', e)
     }
-    const urlObj = new URL(request.url)
-    const url: string = urlObj.searchParams.get('url') || "";
+    const { searchParams } = new URL(request.url)
+    const url: string = searchParams.get('url') || "";
     const resp = tpl.replace(`http://test.com`, decodeURIComponent(url));
 
     return new Response(resp);
